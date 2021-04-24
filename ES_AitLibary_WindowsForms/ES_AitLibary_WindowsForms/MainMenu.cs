@@ -51,11 +51,7 @@ namespace ES_AitLibary_WindowsForms
             //inits
             dtFunc = new DTFunc();
             ws = new WebService.WebService();
-            //mediaLogic = new MediaLogic();
-            //userLogic = new UserLogic();
-            //borrowLogic = new BorrowLogic();
-            //reservedLogic = new ReservedLogic();
-
+            
 
             //show all media
             // set data  source for data grid view

@@ -80,6 +80,8 @@ namespace BusinessLogicLayer
 
         }
 
+
+
         public string[] deleteMediabyId(int id)
         {
             string[] strArr = new string[] { "false", "error message" };
@@ -119,6 +121,9 @@ namespace BusinessLogicLayer
             return strArr;
 
         }
+
+
+
 
         public string[] insertNewMedia(string title, string genre, string director, string language, int publishYear, int budget)
         {
@@ -431,7 +436,7 @@ namespace BusinessLogicLayer
 
 
 
-        //Genre tabel
+        //Genre tabel ---------------------
         public List<IdAndValue> getAllGenreTable()
         {
             List<IdAndValue> myList = new List<IdAndValue>();
