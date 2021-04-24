@@ -17,7 +17,7 @@ namespace ES_AitLibary_WindowsForms
         public static bool isAdmin;
         public static User user;
 
-        private UserLogic userLogic;
+        //private UserLogic userLogic;
 
         public StudentSettings()
         {
@@ -32,7 +32,8 @@ namespace ES_AitLibary_WindowsForms
                 PanelAdmin.Visible = false;
             }
 
-            userLogic = new UserLogic();
+            // TODO: StudentSettings - define logic
+            //userLogic = new UserLogic();
 
         }
 
@@ -65,16 +66,17 @@ namespace ES_AitLibary_WindowsForms
                 return;
             }
 
-            bool result = userLogic.updateUserPassword(user.Id, newPass);
+            // TODO: StudentSettings - updateUserPassword
+            //bool result = userLogic.updateUserPassword(user.Id, newPass);
 
-            if (result)
-            {
-                MessageBox.Show("Password updated to: " + newPass);
-            }
-            else
-            {
-                MessageBox.Show("db returned false their was an error.");
-            }
+            //if (result)
+            //{
+            //    MessageBox.Show("Password updated to: " + newPass);
+            //}
+            //else
+            //{
+            //    MessageBox.Show("db returned false their was an error.");
+            //}
 
         }
 
@@ -86,21 +88,22 @@ namespace ES_AitLibary_WindowsForms
             }
             else
             {
-                bool result = userLogic.deleteUser(user.Id);
+                // TODO: StudentSettngs - delete user
+                //bool result = userLogic.deleteUser(user.Id);
 
-                if (result)
-                {
-                    MessageBox.Show("user deleted successfully");
+                //if (result)
+                //{
+                //    MessageBox.Show("user deleted successfully");
 
-                    //return to main menu
-                    Form mainform = Application.OpenForms["MainMenu"];
-                    mainform.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("db returned false their was an error.");
-                }
+                //    //return to main menu
+                //    Form mainform = Application.OpenForms["MainMenu"];
+                //    mainform.Show();
+                //    this.Close();
+                //}
+                //else
+                //{
+                //    MessageBox.Show("db returned false their was an error.");
+                //}
             }
         }
 
@@ -126,7 +129,9 @@ namespace ES_AitLibary_WindowsForms
 
             //update user data 
             // current user is declared on entry to page
-            userLogic.updateUserAll(user.Id,user.Username,newEmail,newPass1,user.Userlevel);
+
+            // TODO: StudentSettings - update user data
+            //userLogic.updateUserAll(user.Id,user.Username,newEmail,newPass1,user.Userlevel);
             MessageBox.Show("user email and password successfully updated.");
 
 

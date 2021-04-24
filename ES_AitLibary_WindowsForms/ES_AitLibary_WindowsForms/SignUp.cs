@@ -16,7 +16,7 @@ namespace ES_AitLibary_WindowsForms
 
 
         private bool isAdmin = false;
-        public UserLogic userLogic;
+        //public UserLogic userLogic;
         public static User currentUser = null;  //initialize as null
         
 
@@ -39,14 +39,16 @@ namespace ES_AitLibary_WindowsForms
                 }
                 else
                 {
-                    // Todo 
-                    // return user to main menu they should not be here once logged in
+                    //todo return non admin to main menu screen
+                    // they should not be able to get here
+
                 }
 
             }
 
             //get connection to user logic
-            userLogic = new UserLogic();
+            // TODO: SignUp - init connection
+            //userLogic = new UserLogic();
 
         }
 
@@ -83,32 +85,33 @@ namespace ES_AitLibary_WindowsForms
             if(userLevel == 1 || userLevel == 2)  // has to be student or admin user
             {
                 //run update method
-                bool result = userLogic.insertNewUser(username, email, password, userLevel);
+                // TODO: SignUp - insert new user
+                //bool result = userLogic.insertNewUser(username, email, password, userLevel);
 
-                if (result)
-                {
-                    //reset signUp pg class vars
-                    resetSignUpPgAdminStatus();
+                //if (result)
+                //{
+                //    //reset signUp pg class vars
+                //    resetSignUpPgAdminStatus();
 
-                    if (isAdmin)
-                    {
-                        //for more details go to STUDENT SETTINGS return btn method
-                        Form mainform = Application.OpenForms["MainMenu"];
-                        mainform.Show();
-                        this.Close();
+                //    if (isAdmin)
+                //    {
+                //        //for more details go to STUDENT SETTINGS return btn method
+                //        Form mainform = Application.OpenForms["MainMenu"];
+                //        mainform.Show();
+                //        this.Close();
 
-                       
-                    }
-                    //for more details go to STUDENT SETTINGS return btn method
-                    Form login = Application.OpenForms["Login"];
-                    login.Show();
-                    this.Close();
 
-                }
-                else
-                {
-                    MessageBox.Show("DB returned false");
-                }
+                //    }
+                //    //for more details go to STUDENT SETTINGS return btn method
+                //    Form login = Application.OpenForms["Login"];
+                //    login.Show();
+                //    this.Close();
+
+                //}
+                //else
+                //{
+                //    MessageBox.Show("DB returned false");
+                //}
             }
             else
             {

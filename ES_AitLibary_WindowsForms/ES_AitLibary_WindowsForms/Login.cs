@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using BusinessLogicLayer;    //now using ASP.NET project to access SQL_DB
+using BusinessLogicLayer;    //now using ASP.NET project to access SQL_DB
 
 namespace ES_AitLibary_WindowsForms
 {
@@ -17,6 +17,10 @@ namespace ES_AitLibary_WindowsForms
 
     public partial class Login : Form
     {
+
+        private WebService.WebService ws;
+        private DTFunc dtFunc;
+
         public Login()
         {
             InitializeComponent();
@@ -25,9 +29,10 @@ namespace ES_AitLibary_WindowsForms
             ChkBoxIsAdminCheat.Visible = true;
 
 
-            WebService.WebService ws = new WebService.WebService();
-            DGVTemp.DataSource = ws.GetListOfUsers();
+            ws = new WebService.WebService();
+            dtFunc = new DTFunc(); //my class to work with dataTables
 
+            DGVTemp.DataSource = ws.GetListOfUsers();
             //REF - DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
 
         }
@@ -69,11 +74,11 @@ namespace ES_AitLibary_WindowsForms
             //check if text is empty
             if (username.Length > 0 || password.Length > 0)
             {
-                getUserAndMoveToMain(username,password);
+                getUserAndMoveToMain(username, password);
             }
 
 
-            
+
 
         }
 
@@ -99,11 +104,17 @@ namespace ES_AitLibary_WindowsForms
 
 
 
+       
+
+
         public void getUserAndMoveToMain(string username, string password)
         {
             //send to business logic
-            UserLogic ul = new UserLogic();
-            User user = ul.userLogin(username, password);
+
+           
+            System.Data.DataTable dt = ws.userLogin(username, password);
+
+            User user = dtFunc.getOneUserFromDt(dt);
 
             //check for errors
             if (user.Id == -1)
@@ -113,6 +124,7 @@ namespace ES_AitLibary_WindowsForms
             else
             {
 
+                //Console.WriteLine(user.Id + " " + user.Username + " " + user.Userlevel + " " + user.Email);
                 moveToMainMenuWithData(user);
 
             }

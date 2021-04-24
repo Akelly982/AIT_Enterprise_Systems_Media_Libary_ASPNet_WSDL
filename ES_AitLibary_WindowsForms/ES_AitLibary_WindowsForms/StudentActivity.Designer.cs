@@ -35,17 +35,17 @@ namespace ES_AitLibary_WindowsForms
             this.label1 = new System.Windows.Forms.Label();
             this.BtnBack = new System.Windows.Forms.Button();
             this.PanelFees = new System.Windows.Forms.Panel();
-            this.BtnPayFees = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.DataGridViewFees = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.BtnPayFees = new System.Windows.Forms.Button();
             this.PanelReservations = new System.Windows.Forms.Panel();
-            this.BtnCancelReservedMedia = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
             this.DataGridViewActiveReservations = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.BtnCancelReservedMedia = new System.Windows.Forms.Button();
             this.PanelActiveBookings = new System.Windows.Forms.Panel();
-            this.BtnReturnMedia = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
             this.DataGridViewActiveBookings = new System.Windows.Forms.DataGridView();
+            this.label4 = new System.Windows.Forms.Label();
+            this.BtnReturnMedia = new System.Windows.Forms.Button();
             this.PanelBase = new System.Windows.Forms.Panel();
             this.panelNav.SuspendLayout();
             this.PanelFees.SuspendLayout();
@@ -67,7 +67,7 @@ namespace ES_AitLibary_WindowsForms
             this.panelNav.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelNav.Location = new System.Drawing.Point(0, 0);
             this.panelNav.Name = "panelNav";
-            this.panelNav.Size = new System.Drawing.Size(1647, 164);
+            this.panelNav.Size = new System.Drawing.Size(1681, 164);
             this.panelNav.TabIndex = 1;
             // 
             // LabelUserId
@@ -117,27 +117,8 @@ namespace ES_AitLibary_WindowsForms
             this.PanelFees.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelFees.Location = new System.Drawing.Point(0, 0);
             this.PanelFees.Name = "PanelFees";
-            this.PanelFees.Size = new System.Drawing.Size(1647, 620);
+            this.PanelFees.Size = new System.Drawing.Size(1681, 620);
             this.PanelFees.TabIndex = 0;
-            // 
-            // BtnPayFees
-            // 
-            this.BtnPayFees.Location = new System.Drawing.Point(1408, 81);
-            this.BtnPayFees.Name = "BtnPayFees";
-            this.BtnPayFees.Size = new System.Drawing.Size(153, 131);
-            this.BtnPayFees.TabIndex = 0;
-            this.BtnPayFees.Text = "Pay";
-            this.BtnPayFees.UseVisualStyleBackColor = true;
-            this.BtnPayFees.Click += new System.EventHandler(this.BtnPayFees_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(123, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 25);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fees";
             // 
             // DataGridViewFees
             // 
@@ -150,6 +131,25 @@ namespace ES_AitLibary_WindowsForms
             this.DataGridViewFees.TabIndex = 2;
             this.DataGridViewFees.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewFees_CellClick);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(123, 18);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 25);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Fees";
+            // 
+            // BtnPayFees
+            // 
+            this.BtnPayFees.Location = new System.Drawing.Point(1408, 81);
+            this.BtnPayFees.Name = "BtnPayFees";
+            this.BtnPayFees.Size = new System.Drawing.Size(153, 131);
+            this.BtnPayFees.TabIndex = 0;
+            this.BtnPayFees.Text = "Pay";
+            this.BtnPayFees.UseVisualStyleBackColor = true;
+            this.BtnPayFees.Click += new System.EventHandler(this.BtnPayFees_Click);
+            // 
             // PanelReservations
             // 
             this.PanelReservations.Controls.Add(this.DataGridViewActiveReservations);
@@ -158,27 +158,8 @@ namespace ES_AitLibary_WindowsForms
             this.PanelReservations.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelReservations.Location = new System.Drawing.Point(0, 620);
             this.PanelReservations.Name = "PanelReservations";
-            this.PanelReservations.Size = new System.Drawing.Size(1647, 620);
+            this.PanelReservations.Size = new System.Drawing.Size(1681, 620);
             this.PanelReservations.TabIndex = 3;
-            // 
-            // BtnCancelReservedMedia
-            // 
-            this.BtnCancelReservedMedia.Location = new System.Drawing.Point(1408, 70);
-            this.BtnCancelReservedMedia.Name = "BtnCancelReservedMedia";
-            this.BtnCancelReservedMedia.Size = new System.Drawing.Size(153, 131);
-            this.BtnCancelReservedMedia.TabIndex = 0;
-            this.BtnCancelReservedMedia.Text = "Cancel";
-            this.BtnCancelReservedMedia.UseVisualStyleBackColor = true;
-            this.BtnCancelReservedMedia.Click += new System.EventHandler(this.BtnCancelReservedMedia_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 15);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Reservations";
             // 
             // DataGridViewActiveReservations
             // 
@@ -191,6 +172,25 @@ namespace ES_AitLibary_WindowsForms
             this.DataGridViewActiveReservations.TabIndex = 3;
             this.DataGridViewActiveReservations.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewActiveReservations_CellClick);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(123, 15);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Reservations";
+            // 
+            // BtnCancelReservedMedia
+            // 
+            this.BtnCancelReservedMedia.Location = new System.Drawing.Point(1408, 70);
+            this.BtnCancelReservedMedia.Name = "BtnCancelReservedMedia";
+            this.BtnCancelReservedMedia.Size = new System.Drawing.Size(153, 131);
+            this.BtnCancelReservedMedia.TabIndex = 0;
+            this.BtnCancelReservedMedia.Text = "Cancel";
+            this.BtnCancelReservedMedia.UseVisualStyleBackColor = true;
+            this.BtnCancelReservedMedia.Click += new System.EventHandler(this.BtnCancelReservedMedia_Click);
+            // 
             // PanelActiveBookings
             // 
             this.PanelActiveBookings.Controls.Add(this.DataGridViewActiveBookings);
@@ -199,27 +199,8 @@ namespace ES_AitLibary_WindowsForms
             this.PanelActiveBookings.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelActiveBookings.Location = new System.Drawing.Point(0, 1240);
             this.PanelActiveBookings.Name = "PanelActiveBookings";
-            this.PanelActiveBookings.Size = new System.Drawing.Size(1647, 620);
+            this.PanelActiveBookings.Size = new System.Drawing.Size(1681, 620);
             this.PanelActiveBookings.TabIndex = 4;
-            // 
-            // BtnReturnMedia
-            // 
-            this.BtnReturnMedia.Location = new System.Drawing.Point(1406, 84);
-            this.BtnReturnMedia.Name = "BtnReturnMedia";
-            this.BtnReturnMedia.Size = new System.Drawing.Size(153, 131);
-            this.BtnReturnMedia.TabIndex = 0;
-            this.BtnReturnMedia.Text = "Return";
-            this.BtnReturnMedia.UseVisualStyleBackColor = true;
-            this.BtnReturnMedia.Click += new System.EventHandler(this.BtnReturnMedia_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(121, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(166, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Active Bookings";
             // 
             // DataGridViewActiveBookings
             // 
@@ -232,6 +213,25 @@ namespace ES_AitLibary_WindowsForms
             this.DataGridViewActiveBookings.TabIndex = 3;
             this.DataGridViewActiveBookings.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridViewActiveBookings_CellClick);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(121, 15);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(166, 25);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Active Bookings";
+            // 
+            // BtnReturnMedia
+            // 
+            this.BtnReturnMedia.Location = new System.Drawing.Point(1406, 84);
+            this.BtnReturnMedia.Name = "BtnReturnMedia";
+            this.BtnReturnMedia.Size = new System.Drawing.Size(153, 131);
+            this.BtnReturnMedia.TabIndex = 0;
+            this.BtnReturnMedia.Text = "Return";
+            this.BtnReturnMedia.UseVisualStyleBackColor = true;
+            this.BtnReturnMedia.Click += new System.EventHandler(this.BtnReturnMedia_Click);
+            // 
             // PanelBase
             // 
             this.PanelBase.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -241,7 +241,7 @@ namespace ES_AitLibary_WindowsForms
             this.PanelBase.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelBase.Location = new System.Drawing.Point(0, 164);
             this.PanelBase.Name = "PanelBase";
-            this.PanelBase.Size = new System.Drawing.Size(1647, 1913);
+            this.PanelBase.Size = new System.Drawing.Size(1681, 1913);
             this.PanelBase.TabIndex = 2;
             // 
             // StudentActivity
@@ -249,7 +249,7 @@ namespace ES_AitLibary_WindowsForms
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1681, 1500);
+            this.ClientSize = new System.Drawing.Size(1715, 1500);
             this.Controls.Add(this.PanelBase);
             this.Controls.Add(this.panelNav);
             this.Name = "StudentActivity";

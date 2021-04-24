@@ -34,9 +34,7 @@ namespace ES_AitLibary_WindowsForms.WebService {
         
         private System.Threading.SendOrPostCallback GetListOfUsersOperationCompleted;
         
-        private System.Threading.SendOrPostCallback LoginOperationCompleted;
-        
-        private System.Threading.SendOrPostCallback NewMethodAddedByAidanOperationCompleted;
+        private System.Threading.SendOrPostCallback userLoginOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -83,10 +81,7 @@ namespace ES_AitLibary_WindowsForms.WebService {
         public event GetListOfUsersCompletedEventHandler GetListOfUsersCompleted;
         
         /// <remarks/>
-        public event LoginCompletedEventHandler LoginCompleted;
-        
-        /// <remarks/>
-        public event NewMethodAddedByAidanCompletedEventHandler NewMethodAddedByAidanCompleted;
+        public event userLoginCompletedEventHandler userLoginCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/HelloWorld", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -143,64 +138,33 @@ namespace ES_AitLibary_WindowsForms.WebService {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Login", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable Login(string username, string password) {
-            object[] results = this.Invoke("Login", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/userLogin", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable userLogin(string username, string password) {
+            object[] results = this.Invoke("userLogin", new object[] {
                         username,
                         password});
             return ((System.Data.DataTable)(results[0]));
         }
         
         /// <remarks/>
-        public void LoginAsync(string username, string password) {
-            this.LoginAsync(username, password, null);
+        public void userLoginAsync(string username, string password) {
+            this.userLoginAsync(username, password, null);
         }
         
         /// <remarks/>
-        public void LoginAsync(string username, string password, object userState) {
-            if ((this.LoginOperationCompleted == null)) {
-                this.LoginOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLoginOperationCompleted);
+        public void userLoginAsync(string username, string password, object userState) {
+            if ((this.userLoginOperationCompleted == null)) {
+                this.userLoginOperationCompleted = new System.Threading.SendOrPostCallback(this.OnuserLoginOperationCompleted);
             }
-            this.InvokeAsync("Login", new object[] {
+            this.InvokeAsync("userLogin", new object[] {
                         username,
-                        password}, this.LoginOperationCompleted, userState);
+                        password}, this.userLoginOperationCompleted, userState);
         }
         
-        private void OnLoginOperationCompleted(object arg) {
-            if ((this.LoginCompleted != null)) {
+        private void OnuserLoginOperationCompleted(object arg) {
+            if ((this.userLoginCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.LoginCompleted(this, new LoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
-            }
-        }
-        
-        /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NewMethodAddedByAidan", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable NewMethodAddedByAidan(string username, string password) {
-            object[] results = this.Invoke("NewMethodAddedByAidan", new object[] {
-                        username,
-                        password});
-            return ((System.Data.DataTable)(results[0]));
-        }
-        
-        /// <remarks/>
-        public void NewMethodAddedByAidanAsync(string username, string password) {
-            this.NewMethodAddedByAidanAsync(username, password, null);
-        }
-        
-        /// <remarks/>
-        public void NewMethodAddedByAidanAsync(string username, string password, object userState) {
-            if ((this.NewMethodAddedByAidanOperationCompleted == null)) {
-                this.NewMethodAddedByAidanOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNewMethodAddedByAidanOperationCompleted);
-            }
-            this.InvokeAsync("NewMethodAddedByAidan", new object[] {
-                        username,
-                        password}, this.NewMethodAddedByAidanOperationCompleted, userState);
-        }
-        
-        private void OnNewMethodAddedByAidanOperationCompleted(object arg) {
-            if ((this.NewMethodAddedByAidanCompleted != null)) {
-                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.NewMethodAddedByAidanCompleted(this, new NewMethodAddedByAidanCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.userLoginCompleted(this, new userLoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -277,43 +241,17 @@ namespace ES_AitLibary_WindowsForms.WebService {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void LoginCompletedEventHandler(object sender, LoginCompletedEventArgs e);
+    public delegate void userLoginCompletedEventHandler(object sender, userLoginCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class LoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class userLoginCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal LoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
-                base(exception, cancelled, userState) {
-            this.results = results;
-        }
-        
-        /// <remarks/>
-        public System.Data.DataTable Result {
-            get {
-                this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    public delegate void NewMethodAddedByAidanCompletedEventHandler(object sender, NewMethodAddedByAidanCompletedEventArgs e);
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.8.4084.0")]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class NewMethodAddedByAidanCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
-        
-        private object[] results;
-        
-        internal NewMethodAddedByAidanCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal userLoginCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

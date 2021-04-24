@@ -54,6 +54,7 @@
     <Compile Include="defaultForm.Designer.cs">
       <DependentUpon>defaultForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DTFunc.cs" />
     <Compile Include="EditMediaLibary.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,6 +180,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\WebService\WebService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessLogicLayer\BusinessLogicLayer\BusinessLogicLayer.csproj">
+      <Project>{0377ff41-8ff1-46ca-a10b-41994f98cfc8}</Project>
+      <Name>BusinessLogicLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

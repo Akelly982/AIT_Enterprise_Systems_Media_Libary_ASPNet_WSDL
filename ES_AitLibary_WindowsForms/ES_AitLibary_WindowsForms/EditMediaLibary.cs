@@ -14,7 +14,7 @@ namespace ES_AitLibary_WindowsForms
     public partial class EditMediaLibary : Form
     {
 
-        private MediaLogic mediaLogic;
+        //private MediaLogic mediaLogic;
 
         // on dataGridView Row click set row active for given DGView
         private DataGridViewRow activeMediaRow = null;
@@ -27,7 +27,8 @@ namespace ES_AitLibary_WindowsForms
         {
             InitializeComponent();
 
-            mediaLogic = new MediaLogic();
+            // TODO: EditMediaLibary - init connects
+            //mediaLogic = new MediaLogic();
 
             //connect all dataGrids and show
             getAndShowDataGridViews();
@@ -37,11 +38,11 @@ namespace ES_AitLibary_WindowsForms
         private void getAndShowDataGridViews()
         {
 
-            //fast
-            DataGridViewMedia.DataSource = mediaLogic.getAllMedia();
-            DataGridViewDirector.DataSource = mediaLogic.getAllDirectorTable();
-            DataGridViewLanguage.DataSource = mediaLogic.getAllLanguageTable();
-            DataGridViewGenre.DataSource = mediaLogic.getAllGenreTable();
+            // TODO: EditMediaLibary - DGV getAndSet
+            //DataGridViewMedia.DataSource = mediaLogic.getAllMedia();
+            //DataGridViewDirector.DataSource = mediaLogic.getAllDirectorTable();
+            //DataGridViewLanguage.DataSource = mediaLogic.getAllLanguageTable();
+            //DataGridViewGenre.DataSource = mediaLogic.getAllGenreTable();
 
         }
 
@@ -112,21 +113,21 @@ namespace ES_AitLibary_WindowsForms
 
 
 
-
+            // TODO: EditMediaLibary - add media to table
             //add new media item to table
-            string[] resultStrArr = mediaLogic.insertNewMedia(title, genre, director, language, publishYearNum, budgetNum);
+            //string[] resultStrArr = mediaLogic.insertNewMedia(title, genre, director, language, publishYearNum, budgetNum);
 
-            if(resultStrArr[0] == "true") //isSuccessfull
-            {
-                getAndShowDataGridViews();  //refresh DataGridViews
-            }
-            else
-            {
-                //show error 
-                MessageBox.Show(resultStrArr[1]);
-            }
+            //if(resultStrArr[0] == "true") //isSuccessfull
+            //{
+            //    getAndShowDataGridViews();  //refresh DataGridViews
+            //}
+            //else
+            //{
+            //    //show error 
+            //    MessageBox.Show(resultStrArr[1]);
+            //}
 
-            
+
         }
 
         private void updateMedia()
@@ -179,26 +180,29 @@ namespace ES_AitLibary_WindowsForms
                 return;
             }
 
-            //update selected media
-            string[] resultStrArr = mediaLogic.updateMedia(id, title, genre, director, language, publishYearNum, budgetNum);
 
-            if (resultStrArr[0] == "true") //isSuccessfull
-            {
-                getAndShowDataGridViews();  //refresh DataGridViews
-            }
-            else
-            {
-                //show error 
-                MessageBox.Show(resultStrArr[1]);
-            }
+
+            // TODO: EditMediaLibary - update selected media 
+            //update selected media
+            //string[] resultStrArr = mediaLogic.updateMedia(id, title, genre, director, language, publishYearNum, budgetNum);
+
+            //if (resultStrArr[0] == "true") //isSuccessfull
+            //{
+            //    getAndShowDataGridViews();  //refresh DataGridViews
+            //}
+            //else
+            //{
+            //    //show error 
+            //    MessageBox.Show(resultStrArr[1]);
+            //}
 
         }
 
 
-    
 
 
-    private void deleteMedia()
+
+        private void deleteMedia()
         {
             //get selection
             if(activeMediaRow == null)
@@ -215,16 +219,17 @@ namespace ES_AitLibary_WindowsForms
                 //delete selection
                 if (result) 
                 {
-                    string[] resultArr = mediaLogic.deleteMediabyId(id);
-                    if (resultArr[0] == "true")
-                    {
-                        MessageBox.Show("Media item successfully deleted");
-                        getAndShowDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resultArr[1]);
-                    }
+                    // TODO: EditMediaLibary - deleteMediaById
+                    //string[] resultArr = mediaLogic.deleteMediabyId(id);
+                    //if (resultArr[0] == "true")
+                    //{
+                    //    MessageBox.Show("Media item successfully deleted");
+                    //    getAndShowDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(resultArr[1]);
+                    //}
                 }
                 else
                 {
@@ -380,16 +385,17 @@ namespace ES_AitLibary_WindowsForms
                 //delete selection
                 if (result)
                 {
-                    string[] resultArr = mediaLogic.deleteDirectorbyId(id);
-                    if (resultArr[0] == "true")
-                    {
-                        MessageBox.Show("Media item successfully deleted");
-                        getAndShowDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resultArr[1]);
-                    }
+                    // TODO: EditMediaLibary - delete directory by id
+                    //string[] resultArr = mediaLogic.deleteDirectorbyId(id);
+                    //if (resultArr[0] == "true")
+                    //{
+                    //    MessageBox.Show("Media item successfully deleted");
+                    //    getAndShowDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(resultArr[1]);
+                    //}
                 }
                 else
                 {
@@ -414,16 +420,17 @@ namespace ES_AitLibary_WindowsForms
                 //delete selection
                 if (result)
                 {
-                    string[] resultArr = mediaLogic.deleteGenrebyId(id);
-                    if (resultArr[0] == "true")
-                    {
-                        MessageBox.Show("Media item successfully deleted");
-                        getAndShowDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resultArr[1]);
-                    }
+                    // TODO: EditMediaLibary - delete genre by id
+                    //string[] resultArr = mediaLogic.deleteGenrebyId(id);
+                    //if (resultArr[0] == "true")
+                    //{
+                    //    MessageBox.Show("Media item successfully deleted");
+                    //    getAndShowDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(resultArr[1]);
+                    //}
                 }
                 else
                 {
@@ -449,16 +456,17 @@ namespace ES_AitLibary_WindowsForms
                 //delete selection
                 if (result)
                 {
-                    string[] resultArr = mediaLogic.deleteLanguagebyId(id);
-                    if (resultArr[0] == "true")
-                    {
-                        MessageBox.Show("Media item successfully deleted");
-                        getAndShowDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show(resultArr[1]);
-                    }
+                    // TODO: EditMediaLibary - delete language by id
+                    //string[] resultArr = mediaLogic.deleteLanguagebyId(id);
+                    //if (resultArr[0] == "true")
+                    //{
+                    //    MessageBox.Show("Media item successfully deleted");
+                    //    getAndShowDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show(resultArr[1]);
+                    //}
                 }
                 else
                 {

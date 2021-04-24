@@ -16,8 +16,8 @@ namespace ES_AitLibary_WindowsForms
 
         public static bool isAdmin;
         public static User user;
-        private BorrowLogic borrowLogic;
-        private ReservedLogic reservedLogic;
+        //private BorrowLogic borrowLogic;
+        //private ReservedLogic reservedLogic;
 
         public StudentRecord()
         {
@@ -34,13 +34,15 @@ namespace ES_AitLibary_WindowsForms
 
             }
 
-            //inits
-            reservedLogic = new ReservedLogic();
-            borrowLogic = new BorrowLogic();
 
-            //DataGridViewMediaLibary.DataSource = userLogic.getAllUsers();
-            DataGridViewBookingHistory.DataSource = borrowLogic.getByUserForUserHistory(user.Id);
-            DataGridViewReservedHistory.DataSource = reservedLogic.getReservedHistory(user.Id);
+            // TODO: StudentRecord - 
+            ////inits
+            //reservedLogic = new ReservedLogic();
+            //borrowLogic = new BorrowLogic();
+
+            ////DataGridViewMediaLibary.DataSource = userLogic.getAllUsers();
+            //DataGridViewBookingHistory.DataSource = borrowLogic.getByUserForUserHistory(user.Id);
+            //DataGridViewReservedHistory.DataSource = reservedLogic.getReservedHistory(user.Id);
 
         }
 

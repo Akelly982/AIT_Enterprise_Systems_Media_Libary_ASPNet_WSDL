@@ -30,6 +30,7 @@ namespace ES_AitLibary_WindowsForms
         private void InitializeComponent()
         {
             this.PanelBaseLogin = new System.Windows.Forms.Panel();
+            this.DGVTemp = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnSignUp = new System.Windows.Forms.Button();
@@ -42,11 +43,10 @@ namespace ES_AitLibary_WindowsForms
             this.BtnCheatLoggin = new System.Windows.Forms.Button();
             this.ChkBoxIsAdminCheat = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.DGVTemp = new System.Windows.Forms.DataGridView();
             this.PanelBaseLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).BeginInit();
             this.SuspendLayout();
             // 
             // PanelBaseLogin
@@ -63,10 +63,20 @@ namespace ES_AitLibary_WindowsForms
             this.PanelBaseLogin.Controls.Add(this.BtnCheatLoggin);
             this.PanelBaseLogin.Controls.Add(this.ChkBoxIsAdminCheat);
             this.PanelBaseLogin.Controls.Add(this.label1);
-            this.PanelBaseLogin.Location = new System.Drawing.Point(407, 611);
+            this.PanelBaseLogin.Location = new System.Drawing.Point(450, 106);
             this.PanelBaseLogin.Name = "PanelBaseLogin";
             this.PanelBaseLogin.Size = new System.Drawing.Size(800, 1213);
             this.PanelBaseLogin.TabIndex = 0;
+            // 
+            // DGVTemp
+            // 
+            this.DGVTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVTemp.Location = new System.Drawing.Point(32, 668);
+            this.DGVTemp.Name = "DGVTemp";
+            this.DGVTemp.RowHeadersWidth = 82;
+            this.DGVTemp.RowTemplate.Height = 33;
+            this.DGVTemp.Size = new System.Drawing.Size(742, 527);
+            this.DGVTemp.TabIndex = 10;
             // 
             // pictureBox1
             // 
@@ -185,20 +195,11 @@ namespace ES_AitLibary_WindowsForms
             this.label1.TabIndex = 1;
             this.label1.Text = "AIT Libary";
             // 
-            // DGVTemp
-            // 
-            this.DGVTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVTemp.Location = new System.Drawing.Point(32, 668);
-            this.DGVTemp.Name = "DGVTemp";
-            this.DGVTemp.RowHeadersWidth = 82;
-            this.DGVTemp.RowTemplate.Height = 33;
-            this.DGVTemp.Size = new System.Drawing.Size(742, 527);
-            this.DGVTemp.TabIndex = 10;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1674, 1862);
             this.Controls.Add(this.PanelBaseLogin);
@@ -206,9 +207,9 @@ namespace ES_AitLibary_WindowsForms
             this.Text = "Login";
             this.PanelBaseLogin.ResumeLayout(false);
             this.PanelBaseLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).EndInit();
             this.ResumeLayout(false);
 
         }

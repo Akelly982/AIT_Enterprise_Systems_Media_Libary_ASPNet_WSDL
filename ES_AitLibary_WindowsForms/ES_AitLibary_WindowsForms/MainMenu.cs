@@ -16,10 +16,8 @@ namespace ES_AitLibary_WindowsForms
 
 
         private bool isAdmin = false;  //initialize as false
-        public MediaLogic mediaLogic;
-        public UserLogic userLogic;
-        public BorrowLogic borrowLogic;
-        public ReservedLogic reservedLogic;
+        private WebService.WebService ws;
+        private DTFunc dtFunc;
         public static User currentUser;
         public DataGridViewRow activeMediaViewRow = null; //init as no row selected
 
@@ -50,17 +48,21 @@ namespace ES_AitLibary_WindowsForms
 
 
 
-            //init mediaLogic and userLogic
-            mediaLogic = new MediaLogic();
-            userLogic = new UserLogic();
-            borrowLogic = new BorrowLogic();
-            reservedLogic = new ReservedLogic();
+            //inits
+            dtFunc = new DTFunc();
+            ws = new WebService.WebService();
+            //mediaLogic = new MediaLogic();
+            //userLogic = new UserLogic();
+            //borrowLogic = new BorrowLogic();
+            //reservedLogic = new ReservedLogic();
 
 
             //show all media
             // set data  source for data grid view
             // In this case a List<media>
-            DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
+
+            // TODO: MainMenu - mediaLibary.ds
+            //DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
             
 
 
@@ -95,7 +97,8 @@ namespace ES_AitLibary_WindowsForms
                         break;
 
                     case "title":
-                        DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByTitle(userSearch);
+                        // TODO: MainMenu - DGV media by title 
+                        //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByTitle(userSearch);
                         break;
 
                     case "year":
@@ -103,7 +106,8 @@ namespace ES_AitLibary_WindowsForms
                         bool result = int.TryParse(userSearch, out year);
                         if (result)
                         {
-                            DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByYear(year);
+                            // TODO: MainMenu - DGV getMediaByYear
+                            //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByYear(year);
                         }
                         else
                         {
@@ -112,7 +116,8 @@ namespace ES_AitLibary_WindowsForms
                         break;
 
                     case "genre":
-                         DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByGenre(userSearch);
+                        // TODO: MainMenu - DGV getMediaByGenre 
+                        //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByGenre(userSearch);
                         break;
 
                     default:
@@ -128,7 +133,7 @@ namespace ES_AitLibary_WindowsForms
 
         private void BtnResetMediaLibary_Click(object sender, EventArgs e)
         {
-            DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
+            //DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
         }
 
 
@@ -150,22 +155,23 @@ namespace ES_AitLibary_WindowsForms
 
                 if(result[0] == 1) 
                 {
-                    User studentUser = userLogic.getUserById(result[1]);
-                    if (studentUser.Id != -1) 
-                    {
-                        //set retrieved data
-                        StudentSettings.isAdmin = isAdmin;
-                        StudentSettings.user = studentUser;
+                    // TODO: MainMenu - getStudentById
+                    //User studentUser = userLogic.getUserById(result[1]);
+                    //if (studentUser.Id != -1) 
+                    //{
+                    //    //set retrieved data
+                    //    StudentSettings.isAdmin = isAdmin;
+                    //    StudentSettings.user = studentUser;
 
-                        //move between forms
-                        StudentSettings ss = new StudentSettings();
-                        ss.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error retrieving user from db");
-                    }
+                    //    //move between forms
+                    //    StudentSettings ss = new StudentSettings();
+                    //    ss.Show();
+                    //    this.Hide();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error retrieving user from db");
+                    //}
                 }
 
             }
@@ -199,22 +205,23 @@ namespace ES_AitLibary_WindowsForms
 
                 if (result[0] == 1)
                 {
-                    User studentUser = userLogic.getUserById(result[1]);
-                    if (studentUser.Id != -1)
-                    {
-                        //set retrieved data
-                        StudentRecord.isAdmin = isAdmin;
-                        StudentRecord.user = studentUser;
+                    // TODO: MainMenu - getUserId - 2
+                    //User studentUser = userLogic.getUserById(result[1]);
+                    //if (studentUser.Id != -1)
+                    //{
+                    //    //set retrieved data
+                    //    StudentRecord.isAdmin = isAdmin;
+                    //    StudentRecord.user = studentUser;
 
-                        //move between forms
-                        StudentRecord sr = new StudentRecord();
-                        sr.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error retrieving user from db");
-                    }
+                    //    //move between forms
+                    //    StudentRecord sr = new StudentRecord();
+                    //    sr.Show();
+                    //    this.Hide();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error retrieving user from db");
+                    //}
                 }
 
             }
@@ -247,22 +254,23 @@ namespace ES_AitLibary_WindowsForms
 
                 if (result[0] == 1)
                 {
-                    User studentUser = userLogic.getUserById(result[1]);
-                    if (studentUser.Id != -1)
-                    {
-                        //set retrieved data
-                        StudentActivity.isAdmin = isAdmin;
-                        StudentActivity.user = studentUser;
+                    // TODO: MainMenu - getUserID - 3
+                    //User studentUser = userLogic.getUserById(result[1]);
+                    //if (studentUser.Id != -1)
+                    //{
+                    //    //set retrieved data
+                    //    StudentActivity.isAdmin = isAdmin;
+                    //    StudentActivity.user = studentUser;
 
-                        //move between forms
-                        StudentActivity sa = new StudentActivity();
-                        sa.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error retrieving user from db");
-                    }
+                    //    //move between forms
+                    //    StudentActivity sa = new StudentActivity();
+                    //    sa.Show();
+                    //    this.Hide();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error retrieving user from db");
+                    //}
                 }
 
             }
@@ -321,13 +329,15 @@ namespace ES_AitLibary_WindowsForms
         private void checkOutMediaToUser( int userId)
         {
             //check if user exists
-            User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
-            if(curUser.Id == -1)
-            {
-                //ERROR couldent get user by their id
-                MessageBox.Show("unable to find current user in list");
-                return;
-            }
+
+            // TODO: MainMenu -  if user exists 
+            //User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
+            //if (curUser.Id == -1)
+            //{
+            //    //ERROR couldent get user by their id
+            //    MessageBox.Show("unable to find current user in list");
+            //    return;
+            //}
 
 
             //get selected media data
@@ -340,25 +350,26 @@ namespace ES_AitLibary_WindowsForms
             result = int.TryParse(mIdAsStr, out int mediaId);  //try parse idAsStr to int id
             if (result)
             {
-                result = borrowLogic.getIsMediaAvailable(mediaId);
-                //if media is already checked out
-                if (result)
-                {
-                    result = borrowLogic.insertForCheckOutMedia(userId, mediaId);
-                    //if checkOut went smoothly
-                    if (result)
-                    {
-                        MessageBox.Show("successfully checked out media.");
-                    }
-                    else
-                    {
-                        MessageBox.Show("error checking out media.");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Media Item is not currently available");
-                }
+                // TODO: MainMenu - borrow logic
+                //result = borrowLogic.getIsMediaAvailable(mediaId);
+                ////if media is already checked out
+                //if (result)
+                //{
+                //    result = borrowLogic.insertForCheckOutMedia(userId, mediaId);
+                //    //if checkOut went smoothly
+                //    if (result)
+                //    {
+                //        MessageBox.Show("successfully checked out media.");
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("error checking out media.");
+                //    }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Media Item is not currently available");
+                //}
             }
             else
             {
@@ -409,13 +420,14 @@ namespace ES_AitLibary_WindowsForms
         private void reserveMediaToUser(int userId)
         {
             //check if user exists
-            User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
-            if (curUser.Id == -1)
-            {
-                //ERROR couldent get user by their id
-                MessageBox.Show("unable to find current user in list");
-                return;
-            }
+            // TODO: MainMenu - ReserveMediaToUser current user
+            //User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
+            //if (curUser.Id == -1)
+            //{
+            //    //ERROR couldent get user by their id
+            //    MessageBox.Show("unable to find current user in list");
+            //    return;
+            //}
 
 
             //checker bool
@@ -449,16 +461,17 @@ namespace ES_AitLibary_WindowsForms
             //if media is already reserved
             if (result)
             {
-                result = reservedLogic.insertNewReservation(userId, mediaId, dateMonthDayYear); //monthDayYear format == "04-20-2020" == mm-dd-yyyy
-                //if checkOut went smoothly
-                if (result)
-                {
-                    MessageBox.Show("successfully reserved media.");
-                }
-                else
-                {
-                    MessageBox.Show("error creating reservation.");
-                }
+                // TODO: MainMenu -  reserve logic
+                //result = reservedLogic.insertNewReservation(userId, mediaId, dateMonthDayYear); //monthDayYear format == "04-20-2020" == mm-dd-yyyy
+                ////if checkOut went smoothly
+                //if (result)
+                //{
+                //    MessageBox.Show("successfully reserved media.");
+                //}
+                //else
+                //{
+                //    MessageBox.Show("error creating reservation.");
+                //}
             }
             else
             {

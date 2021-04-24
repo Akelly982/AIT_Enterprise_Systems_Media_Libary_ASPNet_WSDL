@@ -17,8 +17,8 @@ namespace ES_AitLibary_WindowsForms
         
         public static bool isAdmin;
         public static User user;
-        private BorrowLogic borrowLogic;
-        private ReservedLogic reservedLogic;
+        //private BorrowLogic borrowLogic;
+        //private ReservedLogic reservedLogic;
         private DataGridViewRow activeReservationsViewRow = null;
         private DataGridViewRow activeBookingsViewRow = null;
         private DataGridViewRow activeFeesViewRow = null;
@@ -37,9 +37,9 @@ namespace ES_AitLibary_WindowsForms
                 
             }
 
-
-            borrowLogic = new BorrowLogic();
-            reservedLogic = new ReservedLogic();
+            // TODO: StudentActivity - init connection 
+            //borrowLogic = new BorrowLogic();
+            //reservedLogic = new ReservedLogic();
 
             // get data for DGV's
             setDataForDataGridViews();
@@ -50,9 +50,10 @@ namespace ES_AitLibary_WindowsForms
 
         private void setDataForDataGridViews()
         {
-            DataGridViewActiveBookings.DataSource = borrowLogic.getByUserForUserActivity(user.Id);
-            DataGridViewFees.DataSource = borrowLogic.getByUserForActiveLateFees(user.Id);
-            DataGridViewActiveReservations.DataSource = reservedLogic.getReservedActive(user.Id);
+            // TODO: StudentActivity - DGV 
+            //DataGridViewActiveBookings.DataSource = borrowLogic.getByUserForUserActivity(user.Id);
+            //DataGridViewFees.DataSource = borrowLogic.getByUserForActiveLateFees(user.Id);
+            //DataGridViewActiveReservations.DataSource = reservedLogic.getReservedActive(user.Id);
         }
 
 
@@ -89,17 +90,18 @@ namespace ES_AitLibary_WindowsForms
 
                 if (parseResult)
                 {
-                    if(borrowLogic.updateMediaForReturn(borrowId, lateFee))
-                    {
-                        MessageBox.Show("successfull media returned.");
+                    // TODO: StudentActivity - returnBorrowedMedia
+                    //if(borrowLogic.updateMediaForReturn(borrowId, lateFee))
+                    //{
+                    //    MessageBox.Show("successfull media returned.");
 
-                        //resfresh DGV
-                        setDataForDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error media not returned on update.");
-                    }
+                    //    //resfresh DGV
+                    //    setDataForDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error media not returned on update.");
+                    //}
                 }
                 else
                 {
@@ -124,17 +126,18 @@ namespace ES_AitLibary_WindowsForms
 
                 if (parseResult)
                 {
-                    if(reservedLogic.deleteReservation(reserveId))
-                    {
-                        MessageBox.Show("successfull reservation removed.");
+                    // TODO: StudentActivity - deleteReservation 
+                    //if(reservedLogic.deleteReservation(reserveId))
+                    //{
+                    //    MessageBox.Show("successfull reservation removed.");
 
-                        //resfresh DGV
-                        setDataForDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error reservation did not delete.");
-                    }
+                    //    //resfresh DGV
+                    //    setDataForDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error reservation did not delete.");
+                    //}
                 }
                 else
                 {
@@ -159,17 +162,18 @@ namespace ES_AitLibary_WindowsForms
 
                 if (parseResult)
                 {
-                    if(borrowLogic.updateMediaPayLateFee(borrowId))
-                    {
-                        MessageBox.Show("successfull media late fee payment.");
+                    // TODO: StudentActivity - payLateFee
+                    //if(borrowLogic.updateMediaPayLateFee(borrowId))
+                    //{
+                    //    MessageBox.Show("successfull media late fee payment.");
 
-                        //resfresh DGV
-                        setDataForDataGridViews();
-                    }
-                    else
-                    {
-                        MessageBox.Show("error late fee not paid.");
-                    }
+                    //    //resfresh DGV
+                    //    setDataForDataGridViews();
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("error late fee not paid.");
+                    //}
                 }
                 else
                 {
