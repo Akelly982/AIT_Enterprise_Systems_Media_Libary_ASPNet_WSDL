@@ -1,0 +1,20 @@
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\BusinessLogicLayer.pdb
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.pdb
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\bin\Debug\DataAccessLayer.dll.config
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csprojAssemblyReference.cache
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.dll
+C:\Users\Akell\Desktop\repo\AIT_Enterprise_Systems_Media_Libary ASP WSDL\BusinessLogicLayer\BusinessLogicLayer\obj\Debug\BusinessLogicLayer.pdb

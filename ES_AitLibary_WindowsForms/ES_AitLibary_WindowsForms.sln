@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31005.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ES_AitLibary_WindowsForms", "ES_AitLibary_WindowsForms\ES_AitLibary_WindowsForms.csproj", "{5A3700B0-9144-4670-AE73-B9C3039D781F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5A3700B0-9144-4670-AE73-B9C3039D781F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A3700B0-9144-4670-AE73-B9C3039D781F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A3700B0-9144-4670-AE73-B9C3039D781F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A3700B0-9144-4670-AE73-B9C3039D781F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C1D0B72D-6D96-4256-97B0-83BAD13518F0}
+	EndGlobalSection
+EndGlobal
