@@ -981,16 +981,15 @@ SELECT BID, UID, MediaID, BorrowDate, ReturnDate, ActualReturnDate, LateFee FROM
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "INSERT INTO TabBorrow\r\n         (UID, MediaID, BorrowDate, ReturnDate, ActualRetu" +
-                "rnDate, LateFee)\r\nVALUES (@uId,@mediaID, CONVERT(varchar(10), GETDATE(), 103), C" +
-                "ONVERT(varchar(10), DATEADD(day, 7, GETDATE()), 103), CONVERT(date, \'11/11/1111\'" +
-                ", 103), 0)";
+                "rnDate, LateFee)\r\nVALUES (@uId,@mediaID, CONVERT(date, GETDATE(), 103), CONVERT(" +
+                "date, DATEADD(day, 7, GETDATE()), 103), CONVERT(date, \'11/11/1111\', 103), 0)";
             this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@uId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "UID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@mediaID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "MediaID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[8].Connection = this.Connection;
-            this._commandCollection[8].CommandText = "UPDATE TabBorrow\r\nSET    ActualReturnDate = CONVERT(VARCHAR(10), GETDATE(), 103)," +
-                " LateFee = @lateFee\r\nWHERE (BID = @borrowId)";
+            this._commandCollection[8].CommandText = "UPDATE TabBorrow\r\nSET    ActualReturnDate = CONVERT(date, GETDATE(), 103), LateFe" +
+                "e = @lateFee\r\nWHERE (BID = @borrowId)";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@lateFee", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 5, 2, "LateFee", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@borrowId", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "BID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));

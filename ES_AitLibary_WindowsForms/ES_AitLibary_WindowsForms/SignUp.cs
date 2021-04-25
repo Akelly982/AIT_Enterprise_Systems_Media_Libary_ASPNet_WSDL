@@ -18,7 +18,8 @@ namespace ES_AitLibary_WindowsForms
         private bool isAdmin = false;
         //public UserLogic userLogic;
         public static User currentUser = null;  //initialize as null
-        
+        private WebService.WebService ws;
+        private DTFunc dtFunc;
 
 
         public SignUp()
@@ -30,7 +31,7 @@ namespace ES_AitLibary_WindowsForms
             // check if I have a user set
             // if true check if its admin 
             // if not admin return to main menu
-            if (currentUser != null)  
+            if (currentUser != null)
             {
                 if (currentUser.Userlevel != 1)
                 {
@@ -39,18 +40,39 @@ namespace ES_AitLibary_WindowsForms
                 }
                 else
                 {
-                    //todo return non admin to main menu screen
-                    // they should not be able to get here
+                    // they should not be able to get here once logged in unless they are an admin
 
+                    //for more details go to STUDENT SETTINGS return btn method
+                    Form mainform = Application.OpenForms["MainMenu"];
+
+                    //reset signUp pg class vars
+                    resetSignUpPgAdminStatus();
+
+                    if (mainform != null)  //does not yet exist
+                    {
+                        mainform.Show();
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your logged in but somehow have gotten to sign up page but not gone through mainMenu?");
+                    }
                 }
 
             }
 
-            //get connection to user logic
-            // TODO: SignUp - init connection
+            //get connection to db / logic
             //userLogic = new UserLogic();
-
+            ws = new WebService.WebService();
+            dtFunc = new DTFunc();
         }
+
+
+        
+    
+    
+
+    
 
 
         private void BtnRegister_Click(object sender, EventArgs e)
@@ -85,33 +107,33 @@ namespace ES_AitLibary_WindowsForms
             if(userLevel == 1 || userLevel == 2)  // has to be student or admin user
             {
                 //run update method
-                // TODO: SignUp - insert new user
                 //bool result = userLogic.insertNewUser(username, email, password, userLevel);
+                bool result = dtFunc.getBool(ws.insertNewUser(username, email, password, userLevel));
 
-                //if (result)
-                //{
-                //    //reset signUp pg class vars
-                //    resetSignUpPgAdminStatus();
+                if (result)
+                {
+                    //reset signUp pg class vars
+                    resetSignUpPgAdminStatus();
 
-                //    if (isAdmin)
-                //    {
-                //        //for more details go to STUDENT SETTINGS return btn method
-                //        Form mainform = Application.OpenForms["MainMenu"];
-                //        mainform.Show();
-                //        this.Close();
+                    if (isAdmin)
+                    {
+                        //for more details go to STUDENT SETTINGS return btn method
+                        Form mainform = Application.OpenForms["MainMenu"];
+                        mainform.Show();
+                        this.Close();
 
 
-                //    }
-                //    //for more details go to STUDENT SETTINGS return btn method
-                //    Form login = Application.OpenForms["Login"];
-                //    login.Show();
-                //    this.Close();
+                    }
+                    //for more details go to STUDENT SETTINGS return btn method
+                    Form login = Application.OpenForms["Login"];
+                    login.Show();
+                    this.Close();
 
-                //}
-                //else
-                //{
-                //    MessageBox.Show("DB returned false");
-                //}
+                }
+                else
+                {
+                    MessageBox.Show("DB returned false");
+                }
             }
             else
             {

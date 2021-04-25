@@ -70,7 +70,7 @@ namespace WebService
         //option1
         // if is a list of elements use this method (how it was designed to be used)
         [WebMethod]
-        public DataTable GetListOfUsers()
+        public DataTable GetAllUsers()
         {
 
             UserLogic userLogic = new UserLogic();
@@ -130,7 +130,7 @@ namespace WebService
         //option 4
         // Captures  ---->  string[] strArr = new string[] { "false", "error message" };
         //
-        // return dt with list of IdAndValue       (it will store the same information twice once as int and once as string)
+        // return dt with list of IdAndValue       
         // id int value will be:     -1 or 0  (boolean)  
         // value string will be:     ( error / success message)
         // -1 == false 
@@ -210,7 +210,7 @@ namespace WebService
         public IdAndValue createStrArrIdAndValue(string[] strArr)
         {
             IdAndValue temp;
-            if (strArr[0] == "true")
+            if (strArr[1] == "true")
             {
                 temp = new IdAndValue(0, strArr[1]);
             }
@@ -334,8 +334,19 @@ namespace WebService
 
         }
 
+        [WebMethod]
+        public DataTable getReservedHistory(int userId)
+        {
 
-        
+            ReservedLogic reserveLogic = new ReservedLogic();
+            List<Reserve> resList = reserveLogic.getReservedHistory(userId);
+
+            return AppUtil.ToDataTable(resList);
+
+        }
+
+
+
         [WebMethod]
         public DataTable getMediaExists(int mediaId)
         {

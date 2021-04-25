@@ -20,13 +20,18 @@ namespace ES_AitLibary_WindowsForms
         //private WebService.WebService ws;
         //private DTFunc dtFunc;
 
+
         //inits for copy and past to new classes
 
-        //private WebService.WebService ws;
-        //private DTFunc dtFunc;
+        //ws = new WebService.WebService();
+        //dtFunc = new DTFunc();
 
         //--------------------------------------
 
+
+
+        int errorInt = -1;
+        string errorString = "ERROR undefined at dtFunc";
 
 
 
@@ -46,6 +51,8 @@ namespace ES_AitLibary_WindowsForms
         }
 
 
+
+
         public User getOneUserFromDt(System.Data.DataTable dt)
         {
             //Note although it is a datatable their should only be one row in the datatable
@@ -56,10 +63,10 @@ namespace ES_AitLibary_WindowsForms
             //private int userLevel;    2
             //private string email;    3
 
-            int uid = -1;
-            string username = "undefined";
-            int userLevel = -1;
-            string userEmail = "undefined";
+            int uid = errorInt;
+            string username = errorString;
+            int userLevel = errorInt;
+            string userEmail = errorString;
 
 
             // For each row, print the values of each column
@@ -85,9 +92,103 @@ namespace ES_AitLibary_WindowsForms
 
 
 
+        public bool getBool(System.Data.DataTable dt)
+        {
+
+            //IdAndValue class
+            //private int id;       0
+            //private string value; 1
+
+            // expected return item list of 1
+            // option 3 in webservice
+            //
+            //if (result)
+            //{
+            //    temp = new IdAndValue(0, "true");
+            //}
+            //else
+            //{
+            //    temp = new IdAndValue(-1, "false");
+            //}
+
+            int id = errorInt;
+            string value = errorString;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                id = (int)row[0];
+                value = (string)row[1];
+            }
 
 
+            IdAndValue temp = new IdAndValue(id, value);
 
+
+            if (id == 0)   // 0 == true
+            {  
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+
+
+        }
+
+
+        public String[] getStrArray(System.Data.DataTable dt)
+        {
+
+            //IdAndValue class
+            //private int id;        0
+            //private string value;  1
+
+            // expected return item list of 1
+            // option 4 in webservice
+            //
+            //if (strArr[0] == "true")
+            //{
+            //    temp = new IdAndValue(0, strArr[1]);
+            //}
+            //else
+            //{
+            //    temp = new IdAndValue(-1, strArr[1]);
+            //}
+            //
+            // id int value will be:     -1 or 0  (boolean)  
+            // value string will be:     ( error / success message)
+
+            
+
+            string[] strArr = new string[] { "false", "error message" };
+
+            int id = errorInt;
+            string value = errorString;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                id = (int)row[0];
+                value = (string)row[1];
+
+            }
+
+            if(id == 0)     // convert int back into string
+            {
+                strArr[0] = "true";
+            }
+            else
+            {
+                strArr[0] = "false";
+            }
+
+            strArr[1] = value;
+
+            
+            return strArr;
+
+        }
 
 
 

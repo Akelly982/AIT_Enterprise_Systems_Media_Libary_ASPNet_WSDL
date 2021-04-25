@@ -32,9 +32,8 @@ namespace ES_AitLibary_WindowsForms
             ws = new WebService.WebService();
             dtFunc = new DTFunc(); //my class to work with dataTables
 
-            DGVTemp.DataSource = ws.GetListOfUsers();
-            //REF - DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
-
+            DGVTemp.DataSource = ws.GetAllUsers();
+            
         }
 
         private void BtnCheatLoggin_Click(object sender, EventArgs e)

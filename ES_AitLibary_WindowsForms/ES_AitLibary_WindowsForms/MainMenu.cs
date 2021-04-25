@@ -51,14 +51,15 @@ namespace ES_AitLibary_WindowsForms
             //inits
             dtFunc = new DTFunc();
             ws = new WebService.WebService();
-            
+
 
             //show all media
             // set data  source for data grid view
             // In this case a List<media>
 
-            // TODO: MainMenu - mediaLibary.ds
+            
             //DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
+            DataGridViewMediaLibary.DataSource = ws.getAllMedia();
             
 
 
@@ -93,8 +94,10 @@ namespace ES_AitLibary_WindowsForms
                         break;
 
                     case "title":
-                        // TODO: MainMenu - DGV media by title 
+
                         //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByTitle(userSearch);
+                        DataGridViewMediaLibary.DataSource = ws.getMediaByTitle(userSearch);
+                        
                         break;
 
                     case "year":
@@ -102,8 +105,9 @@ namespace ES_AitLibary_WindowsForms
                         bool result = int.TryParse(userSearch, out year);
                         if (result)
                         {
-                            // TODO: MainMenu - DGV getMediaByYear
+
                             //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByYear(year);
+                            DataGridViewMediaLibary.DataSource = ws.getMediaByYear(year);
                         }
                         else
                         {
@@ -112,8 +116,8 @@ namespace ES_AitLibary_WindowsForms
                         break;
 
                     case "genre":
-                        // TODO: MainMenu - DGV getMediaByGenre 
                         //DataGridViewMediaLibary.DataSource = mediaLogic.getMediaByGenre(userSearch);
+                        DataGridViewMediaLibary.DataSource = ws.getMediaByGenre(userSearch);
                         break;
 
                     default:
@@ -130,6 +134,7 @@ namespace ES_AitLibary_WindowsForms
         private void BtnResetMediaLibary_Click(object sender, EventArgs e)
         {
             //DataGridViewMediaLibary.DataSource = mediaLogic.getAllMedia();
+            DataGridViewMediaLibary.DataSource = ws.getAllMedia();
         }
 
 
@@ -151,23 +156,25 @@ namespace ES_AitLibary_WindowsForms
 
                 if(result[0] == 1) 
                 {
-                    // TODO: MainMenu - getStudentById
+                    
+                    System.Data.DataTable dt = ws.getUserById(result[1]);
+                    User studentUser = dtFunc.getOneUserFromDt(dt);
                     //User studentUser = userLogic.getUserById(result[1]);
-                    //if (studentUser.Id != -1) 
-                    //{
-                    //    //set retrieved data
-                    //    StudentSettings.isAdmin = isAdmin;
-                    //    StudentSettings.user = studentUser;
+                    if (studentUser.Id != -1)
+                    {
+                        //set retrieved data
+                        StudentSettings.isAdmin = isAdmin;
+                        StudentSettings.user = studentUser;
 
-                    //    //move between forms
-                    //    StudentSettings ss = new StudentSettings();
-                    //    ss.Show();
-                    //    this.Hide();
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("error retrieving user from db");
-                    //}
+                        //move between forms
+                        StudentSettings ss = new StudentSettings();
+                        ss.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("error retrieving user from db");
+                    }
                 }
 
             }
@@ -201,23 +208,25 @@ namespace ES_AitLibary_WindowsForms
 
                 if (result[0] == 1)
                 {
-                    // TODO: MainMenu - getUserId - 2
+                    
+                    System.Data.DataTable dt = ws.getUserById(result[1]);
+                    User studentUser = dtFunc.getOneUserFromDt(dt);
                     //User studentUser = userLogic.getUserById(result[1]);
-                    //if (studentUser.Id != -1)
-                    //{
-                    //    //set retrieved data
-                    //    StudentRecord.isAdmin = isAdmin;
-                    //    StudentRecord.user = studentUser;
+                    if (studentUser.Id != -1)
+                    {
+                        //set retrieved data
+                        StudentRecord.isAdmin = isAdmin;
+                        StudentRecord.user = studentUser;
 
-                    //    //move between forms
-                    //    StudentRecord sr = new StudentRecord();
-                    //    sr.Show();
-                    //    this.Hide();
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("error retrieving user from db");
-                    //}
+                        //move between forms
+                        StudentRecord sr = new StudentRecord();
+                        sr.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("error retrieving user from db");
+                    }
                 }
 
             }
@@ -250,23 +259,24 @@ namespace ES_AitLibary_WindowsForms
 
                 if (result[0] == 1)
                 {
-                    // TODO: MainMenu - getUserID - 3
+                    System.Data.DataTable dt = ws.getUserById(result[1]);
+                    User studentUser = dtFunc.getOneUserFromDt(dt);
                     //User studentUser = userLogic.getUserById(result[1]);
-                    //if (studentUser.Id != -1)
-                    //{
-                    //    //set retrieved data
-                    //    StudentActivity.isAdmin = isAdmin;
-                    //    StudentActivity.user = studentUser;
+                    if (studentUser.Id != -1)
+                    {
+                        //set retrieved data
+                        StudentActivity.isAdmin = isAdmin;
+                        StudentActivity.user = studentUser;
 
-                    //    //move between forms
-                    //    StudentActivity sa = new StudentActivity();
-                    //    sa.Show();
-                    //    this.Hide();
-                    //}
-                    //else
-                    //{
-                    //    MessageBox.Show("error retrieving user from db");
-                    //}
+                        //move between forms
+                        StudentActivity sa = new StudentActivity();
+                        sa.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("error retrieving user from db");
+                    }
                 }
 
             }
@@ -324,16 +334,26 @@ namespace ES_AitLibary_WindowsForms
       
         private void checkOutMediaToUser( int userId)
         {
+
+
+            if(activeMediaViewRow == null) // if no active row selected return
+            {
+                MessageBox.Show("please reselect active row");
+                return;
+            }
+
             //check if user exists
 
-            // TODO: MainMenu -  if user exists 
+
+            System.Data.DataTable dt = ws.getUserById(userId);
+            User curUser = dtFunc.getOneUserFromDt(dt);
             //User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
-            //if (curUser.Id == -1)
-            //{
-            //    //ERROR couldent get user by their id
-            //    MessageBox.Show("unable to find current user in list");
-            //    return;
-            //}
+            if (curUser.Id == -1)
+            {
+                //ERROR couldent get user by their id
+                MessageBox.Show("unable to find current user in list");
+                return;
+            }
 
 
             //get selected media data
@@ -346,26 +366,30 @@ namespace ES_AitLibary_WindowsForms
             result = int.TryParse(mIdAsStr, out int mediaId);  //try parse idAsStr to int id
             if (result)
             {
-                // TODO: MainMenu - borrow logic
+                
+                result = dtFunc.getBool(ws.getIsMediaAvailable(mediaId));
                 //result = borrowLogic.getIsMediaAvailable(mediaId);
-                ////if media is already checked out
-                //if (result)
-                //{
-                //    result = borrowLogic.insertForCheckOutMedia(userId, mediaId);
-                //    //if checkOut went smoothly
-                //    if (result)
-                //    {
-                //        MessageBox.Show("successfully checked out media.");
-                //    }
-                //    else
-                //    {
-                //        MessageBox.Show("error checking out media.");
-                //    }
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Media Item is not currently available");
-                //}
+
+                //if media is already checked out
+                if (result)
+                {
+                    //result = borrowLogic.insertForCheckOutMedia(userId, mediaId);
+                    result = dtFunc.getBool(ws.insertForCheckOutMedia(userId, mediaId));
+
+                    //if checkOut went smoothly
+                    if (result)
+                    {
+                        MessageBox.Show("successfully checked out media.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("error checking out media.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Media Item is not currently available");
+                }
             }
             else
             {
@@ -416,14 +440,15 @@ namespace ES_AitLibary_WindowsForms
         private void reserveMediaToUser(int userId)
         {
             //check if user exists
-            // TODO: MainMenu - ReserveMediaToUser current user
+
+            User curUser = dtFunc.getOneUserFromDt(ws.getUserById(userId));
             //User curUser = userLogic.getUserById(userId); //sets user id to -1 if error
-            //if (curUser.Id == -1)
-            //{
-            //    //ERROR couldent get user by their id
-            //    MessageBox.Show("unable to find current user in list");
-            //    return;
-            //}
+            if (curUser.Id == -1)
+            {
+                //ERROR couldent get user by their id
+                MessageBox.Show("unable to find current user in list");
+                return;
+            }
 
 
             //checker bool
@@ -457,17 +482,19 @@ namespace ES_AitLibary_WindowsForms
             //if media is already reserved
             if (result)
             {
-                // TODO: MainMenu -  reserve logic
+                
+                result = dtFunc.getBool(ws.insertNewReservation(userId,mediaId,dateMonthDayYear));
                 //result = reservedLogic.insertNewReservation(userId, mediaId, dateMonthDayYear); //monthDayYear format == "04-20-2020" == mm-dd-yyyy
-                ////if checkOut went smoothly
-                //if (result)
-                //{
-                //    MessageBox.Show("successfully reserved media.");
-                //}
-                //else
-                //{
-                //    MessageBox.Show("error creating reservation.");
-                //}
+                
+                //if checkOut went smoothly
+                if (result)
+                {
+                    MessageBox.Show("successfully reserved media.");
+                }
+                else
+                {
+                    MessageBox.Show("error creating reservation.");
+                }
             }
             else
             {
