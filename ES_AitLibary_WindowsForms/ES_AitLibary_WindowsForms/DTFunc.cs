@@ -73,10 +73,20 @@ namespace ES_AitLibary_WindowsForms
             foreach (DataRow row in dt.Rows)
             {
 
+
+                
                 uid = (int)row[0];
-                username = (string)row[1];
-                userLevel = (int)row[2];
-                userEmail = (string)row[3];
+                if(uid == -1)
+                {
+                    //Leave rest as error string or int
+                }
+                else
+                {
+                    username = (string)row[1];
+                    userLevel = (int)row[2];
+                    userEmail = (string)row[3];
+                }
+                
 
             }
 
@@ -171,7 +181,6 @@ namespace ES_AitLibary_WindowsForms
             {
                 id = (int)row[0];
                 value = (string)row[1];
-
             }
 
             if(id == 0)     // convert int back into string

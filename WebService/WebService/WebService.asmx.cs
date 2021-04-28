@@ -208,9 +208,13 @@ namespace WebService
 
 
         public IdAndValue createStrArrIdAndValue(string[] strArr)
+
+            //recieved strArray:
+                //index 0 == boolSTr 
+                //index 1== ErrorMessay 
         {
             IdAndValue temp;
-            if (strArr[1] == "true")
+            if (strArr[0] == "true")     
             {
                 temp = new IdAndValue(0, strArr[1]);
             }

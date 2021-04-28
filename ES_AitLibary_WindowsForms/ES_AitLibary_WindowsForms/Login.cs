@@ -31,8 +31,6 @@ namespace ES_AitLibary_WindowsForms
 
             ws = new WebService.WebService();
             dtFunc = new DTFunc(); //my class to work with dataTables
-
-            DGVTemp.DataSource = ws.GetAllUsers();
             
         }
 
@@ -118,7 +116,7 @@ namespace ES_AitLibary_WindowsForms
             //check for errors
             if (user.Id == -1)
             {
-                MessageBox.Show("get user error UID == -1 ");
+                MessageBox.Show(" User loggin information incorrect Error UserID return -1");
             }
             else
             {

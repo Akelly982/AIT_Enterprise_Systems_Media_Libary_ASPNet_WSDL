@@ -30,7 +30,6 @@ namespace ES_AitLibary_WindowsForms
         private void InitializeComponent()
         {
             this.PanelBaseLogin = new System.Windows.Forms.Panel();
-            this.DGVTemp = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BtnSignUp = new System.Windows.Forms.Button();
@@ -44,7 +43,6 @@ namespace ES_AitLibary_WindowsForms
             this.ChkBoxIsAdminCheat = new System.Windows.Forms.CheckBox();
             this.label1 = new System.Windows.Forms.Label();
             this.PanelBaseLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -53,7 +51,6 @@ namespace ES_AitLibary_WindowsForms
             // 
             this.PanelBaseLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.PanelBaseLogin.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.PanelBaseLogin.Controls.Add(this.DGVTemp);
             this.PanelBaseLogin.Controls.Add(this.pictureBox1);
             this.PanelBaseLogin.Controls.Add(this.panel2);
             this.PanelBaseLogin.Controls.Add(this.TextBoxPassword);
@@ -63,20 +60,10 @@ namespace ES_AitLibary_WindowsForms
             this.PanelBaseLogin.Controls.Add(this.BtnCheatLoggin);
             this.PanelBaseLogin.Controls.Add(this.ChkBoxIsAdminCheat);
             this.PanelBaseLogin.Controls.Add(this.label1);
-            this.PanelBaseLogin.Location = new System.Drawing.Point(450, 106);
+            this.PanelBaseLogin.Location = new System.Drawing.Point(405, 227);
             this.PanelBaseLogin.Name = "PanelBaseLogin";
-            this.PanelBaseLogin.Size = new System.Drawing.Size(800, 1213);
+            this.PanelBaseLogin.Size = new System.Drawing.Size(800, 662);
             this.PanelBaseLogin.TabIndex = 0;
-            // 
-            // DGVTemp
-            // 
-            this.DGVTemp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGVTemp.Location = new System.Drawing.Point(32, 668);
-            this.DGVTemp.Name = "DGVTemp";
-            this.DGVTemp.RowHeadersWidth = 82;
-            this.DGVTemp.RowTemplate.Height = 33;
-            this.DGVTemp.Size = new System.Drawing.Size(742, 527);
-            this.DGVTemp.TabIndex = 10;
             // 
             // pictureBox1
             // 
@@ -201,13 +188,12 @@ namespace ES_AitLibary_WindowsForms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1674, 1862);
+            this.ClientSize = new System.Drawing.Size(1674, 1135);
             this.Controls.Add(this.PanelBaseLogin);
             this.Name = "Login";
             this.Text = "Login";
             this.PanelBaseLogin.ResumeLayout(false);
             this.PanelBaseLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGVTemp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -229,7 +215,6 @@ namespace ES_AitLibary_WindowsForms
         private System.Windows.Forms.Button BtnCheatLoggin;
         private System.Windows.Forms.CheckBox ChkBoxIsAdminCheat;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView DGVTemp;
     }
 }
 

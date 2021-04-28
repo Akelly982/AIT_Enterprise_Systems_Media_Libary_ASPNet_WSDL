@@ -126,7 +126,7 @@ namespace ES_AitLibary_WindowsForms
             //add new media item to table
             //string[] resultStrArr = mediaLogic.insertNewMedia(title, genre, director, language, publishYearNum, budgetNum);
             string[] resultStrArr = dtFunc.getStrArray(ws.insertNewMedia(title, genre, director, language, publishYearNum, budgetNum));
-
+            //dtFunc.consolePrintDT(ws.insertNewMedia(title, genre, director, language, publishYearNum, budgetNum));
 
             if (resultStrArr[0] == "true") //isSuccessfull
             {
